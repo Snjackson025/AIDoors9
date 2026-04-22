@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Vector7D">
+      <UniqueIdentifier>{cb20b78d-8d09-4f72-b891-8f6c0bd42d42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Padded">
+      <UniqueIdentifier>{8845bb1c-066a-45e1-bcf5-01d8038ad659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WorkStealingQueue">
+      <UniqueIdentifier>{e9b23815-8f78-48d0-8bc6-6becada9e8b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Threadpool">
+      <UniqueIdentifier>{8a241fe8-f1a9-4118-87ba-bbfe9c633500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Particle">
+      <UniqueIdentifier>{ebd334f6-6501-4cf1-98c0-f76a774ea4b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PSOEngine">
+      <UniqueIdentifier>{2eebccab-7ab6-4bec-9830-d4dbadb35174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AtomicStigmergyField">
+      <UniqueIdentifier>{10b45f27-6ef2-48f7-a44f-2ade145e65a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Door">
+      <UniqueIdentifier>{89ff4746-6b80-48d6-9560-1db7eea3effc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DoorsAI9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector7D.cpp">
+      <Filter>Source Files\Vector7D</Filter>
+    </ClCompile>
+    <ClCompile Include="Padded.cpp">
+      <Filter>Source Files\Padded</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkStealingQueue.cpp">
+      <Filter>Source Files\WorkStealingQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>Source Files\Threadpool</Filter>
+    </ClCompile>
+    <ClCompile Include="PSOEngine.cpp">
+      <Filter>Source Files\PSOEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="AtomicStigmergyField.cpp">
+      <Filter>Source Files\AtomicStigmergyField</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>Source Files\Door</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vector7D.h">
+      <Filter>Source Files\Vector7D</Filter>
+    </ClInclude>
+    <ClInclude Include="Padded.h">
+      <Filter>Source Files\Padded</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkStealingQueue.h">
+      <Filter>Source Files\WorkStealingQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>Source Files\Threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="PSOEngine.h">
+      <Filter>Source Files\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>Source Files\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="AtomicStigmergyField.h">
+      <Filter>Source Files\AtomicStigmergyField</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
