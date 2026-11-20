@@ -27,6 +27,6 @@ jobs:
         $cmds = "create smoke 16`nlist`nquit`n"
         $output = $cmds | & $exe
         if ($LASTEXITCODE -ne 0) { throw "Smoke test exited with code $LASTEXITCODE" }
-        if ($output -notmatch "AIDoors Hardened Core") { throw "Missing banner in output" }
-        if ($output -notmatch "ACTIVE DOORS") { throw "Missing ACTIVE DOORS in output" }
-        if ($output -notmatch "smoke") { throw "Missing door 'smoke' in output" }
+        if (-not ($output -match "AIDoors Hardened Core")) { throw "Missing banner in output" }
+        if (-not ($output -match "ACTIVE DOORS")) { throw "Missing ACTIVE DOORS in output" }
+        if (-not ($output -match "smoke")) { throw "Missing door 'smoke' in output" }
