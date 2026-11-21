@@ -60,17 +60,10 @@
 // ============================================================
 // CACHE-LINE OPTIMIZATION
 // (CACHE_LINE is defined in Vector7D.h)
+// NOTE: MSVC rejects alignas in a type alias ("using Aligned =
+// alignas(...) T"), so alignment is applied directly on the
+// member instead (see Particle::bestFitness below).
 // ============================================================
-
-template<typename T>
-using Aligned = alignas(CACHE_LINE) T;
-
-// Prevent false sharing - pad to cache line
-template<typename T>
-struct Padded {
-    T value;
-    char padding[CACHE_LINE - sizeof(T) % CACHE_LINE];
-};
 
 // ============================================================
 // WORK-STEALING QUEUE (Chase-Lev Deque)
@@ -299,7 +292,7 @@ struct alignas(CACHE_LINE) Particle {
     Vector7D position;
     Vector7D velocity;
     Vector7D bestPosition;
-    Aligned<double> bestFitness;
+    alignas(CACHE_LINE) double bestFitness;
 };
 
 static_assert(sizeof(Particle) == CACHE_LINE * 4, "Particle spans cache lines");
