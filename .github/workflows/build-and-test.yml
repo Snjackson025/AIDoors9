@@ -29,10 +29,10 @@ jobs:
         if (-not (Test-Path $exe)) { throw "Executable not found: $exe" }
         $cmds = "create smoke 16`nlist`nquit`n"
         $output = $cmds | & $exe
-        Write-Host "--- captured output ---"
-        $output | ForEach-Object { Write-Host $_ }
-        Write-Host "--- end captured output ---"
-        if ($LASTEXITCODE -ne 0) { throw "Smoke test exited with code $LASTEXITCODE" }
+        $exitCode = $LASTEXITCODE
+        # Print the program output so failures are diagnosable in the log.
+        $output
+        if ($exitCode -ne 0) { throw "Smoke test exited with code $exitCode" }
         if (-not ($output -match "AIDoors Hardened Core")) { throw "Missing banner in output" }
         if (-not ($output -match "ACTIVE DOORS")) { throw "Missing ACTIVE DOORS in output" }
         if (-not ($output -match "smoke")) { throw "Missing door 'smoke' in output" }
