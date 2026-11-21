@@ -562,6 +562,15 @@ int main() {
     std::cout << "Commands: create <id> [swarm] | destroy <id> | list | bifurcate <id> <newid> | quit\n\n";
 
     while(std::cout << "> " && std::getline(std::cin, line)) {
+        // Sanitize the line: some Windows shells pipe a UTF-8 BOM at the
+        // start of stdin and CRLF line endings. A BOM glued to the first
+        // token would make "create" unrecognizable, so the door would
+        // never be created while "list" still worked.
+        if(line.size() >= 3 && (unsigned char)line[0] == 0xEF &&
+           (unsigned char)line[1] == 0xBB && (unsigned char)line[2] == 0xBF)
+            line.erase(0, 3);
+        if(!line.empty() && line.back() == '\r') line.pop_back();
+
         std::istringstream iss(line);
         std::string cmd;
         iss >> cmd;
@@ -571,7 +580,10 @@ int main() {
             std::string id;
             size_t swarm = 64;
             iss >> id >> swarm;
-            if(!id.empty()) nexus.create(id, swarm);
+            if(!id.empty()) {
+                nexus.create(id, swarm);
+                std::cout << "Created door '" << id << "' (swarm " << swarm << ")\n";
+            }
         }
         else if(cmd == "destroy") {
             std::string id; iss >> id;
